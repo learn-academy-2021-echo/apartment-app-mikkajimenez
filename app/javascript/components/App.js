@@ -6,7 +6,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import AboutUs from "./pages/AboutUs";
+import ApartmentIndex from "./pages/ApartmentIndex";
 import LearnMore from "./pages/LearnMore";
 import Home from "./pages/Home";
 import { Nav, NavItem } from "reactstrap";
@@ -16,12 +16,12 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Header />
+        <Header {...this.props} />
         <h1>Hello Apartment App!</h1>
 
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/about" component={AboutUs} />
+          <Route path="/index" component={ApartmentIndex} />
           <Route path="/learn" component={LearnMore} />
         </Switch>
       </Router>

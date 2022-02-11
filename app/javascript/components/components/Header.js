@@ -20,23 +20,27 @@ export default class Header extends Component {
       sign_out_route,
     } = this.props;
 
+    console.log(current_user);
+
     return (
       <>
         <Navbar color="info" expand fixed="top" light>
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand href="/">Home</NavbarBrand>
           <NavbarToggler onClick={function noRefCheck() {}} />
           <Collapse navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
-                <NavLink href="/learn/">Learn more</NavLink>
+                <NavLink href="/index/">See all Apartments</NavLink>
               </NavItem>
+
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">
-                  About Us
+                  Add a Listing
                 </NavLink>
                 <NavbarText></NavbarText>
               </NavItem>
             </Nav>
+
             <NavbarText>
               {logged_in && (
                 <div>
@@ -45,7 +49,7 @@ export default class Header extends Component {
               )}
               {!logged_in && (
                 <div>
-                  <a href={sign_in_route}>Sign In</a>
+                  <a href={sign_in_route}>Sign In / Sign Up</a>
                 </div>
               )}
             </NavbarText>
